@@ -7,6 +7,8 @@ const Book = require('./models/book.model.js')
 const Scores = require('./models/scores.model.js')
 const jwt = require('jsonwebtoken')
 
+const PORT = process.env.PORT || 3030;
+
 app.use(cors())
 app.use(express.json())
 
@@ -250,6 +252,6 @@ app.post('/api/register',(req,res)=>{
     res.json({status:'ok'})
 })
 */
-app.listen(1337,()=>{
-    console.log('Server 1337')
-})
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
