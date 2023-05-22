@@ -97,10 +97,10 @@ app.get('/getBooksInfo/:id', async(req, res)=>{
     let rpi= req.params.id
     let rest;
     let rest2;
-   //let collection = await db.collection("book");
+   let collection = await db.collection("book");
     
    
-   /*
+   
 
     let result = await Scores.findOne({_id:rpi})
  .then((docs)=>{
@@ -109,7 +109,7 @@ app.get('/getBooksInfo/:id', async(req, res)=>{
  .catch((err)=>{
      console.log(err);
  
- })*/
+ })
 
   if (!rest) res.send("Not found").status(404); 
   else res.json(rest).status(200);
